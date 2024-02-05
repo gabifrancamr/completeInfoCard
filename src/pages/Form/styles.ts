@@ -18,8 +18,6 @@ export const InfoCard = styled.div`
   gap: 1rem;
 `
 
-export const ExpirationDate = styled.div``
-
 export const MonthAndYear = styled.div`
   display: flex;
   gap: 0.5rem;
@@ -29,5 +27,3 @@ export const MonthAndYear = styled.div`
     width: 8.468rem;
   }
 `
-
-export const Cvc = styled.div``
