@@ -14,7 +14,8 @@ interface ErrorsTypes {
 }
 
 export function Form() {
-  const { register, handleSubmit, formState } = useFormContext()
+  const { register, handleSubmit, formState, trigger, setValue } =
+    useFormContext()
 
   const navigate = useNavigate()
 
@@ -33,6 +34,10 @@ export function Form() {
           placeholder="Name User"
           {...register('name')}
           error={errors.name?.message}
+          onChange={(e) => {
+            setValue('name', e.target.value)
+            trigger('name')
+          }}
         />
         <label htmlFor="cardNumber">card number</label>
         <Input
@@ -40,7 +45,11 @@ export function Form() {
           placeholder="0000 0000 0000 0000"
           {...register('number')}
           error={errors.number?.message}
-          maxLength={19}
+          maxLength={16}
+          onChange={(e) => {
+            setValue('number', e.target.value)
+            trigger('number')
+          }}
         />
 
         <InfoCard>
@@ -56,6 +65,10 @@ export function Form() {
                   max={12}
                   translate="no"
                   maxLength={2}
+                  onChange={(e) => {
+                    setValue('month', e.target.value)
+                    trigger('month')
+                  }}
                 />
               </div>
               <div>
@@ -68,6 +81,10 @@ export function Form() {
                   max={2030}
                   translate="no"
                   maxLength={4}
+                  onChange={(e) => {
+                    setValue('year', e.target.value)
+                    trigger('year')
+                  }}
                 />
               </div>
             </MonthAndYear>
@@ -80,6 +97,10 @@ export function Form() {
               {...register('cvc')}
               error={errors.cvc?.message}
               maxLength={3}
+              onChange={(e) => {
+                setValue('cvc', e.target.value)
+                trigger('cvc')
+              }}
             />
           </div>
         </InfoCard>
