@@ -14,6 +14,9 @@ import {
   LineGray,
 } from './styles'
 
+import VanillaTilt from 'vanilla-tilt'
+import { useEffect } from 'react'
+
 export function AreaCard() {
   const { watch } = useFormContext()
 
@@ -23,10 +26,19 @@ export function AreaCard() {
   const year = watch('year')
   const cvc = watch('cvc')
 
+  useEffect(() => {
+    const cards = document.querySelectorAll('.card')
+    const cardsArray = Array.from(cards) as HTMLElement[]
+    VanillaTilt.init(cardsArray, {
+      max: 25,
+      speed: 400,
+    })
+  }, [])
+
   return (
     <AreaCardContainer>
       <Cards>
-        <FrontCard>
+        <FrontCard className="card">
           <Circles>
             <WhiteCircle />
             <TransparentCircle />
@@ -42,7 +54,7 @@ export function AreaCard() {
           </NumberAndData>
         </FrontCard>
 
-        <BackCard>
+        <BackCard className="card">
           <LineBlack />
           <LineGray>{cvc || '000'}</LineGray>
         </BackCard>
