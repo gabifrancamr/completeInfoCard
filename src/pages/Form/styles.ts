@@ -26,6 +26,7 @@ export const MonthAndYear = styled.div`
 
   input {
     text-transform: uppercase;
+    width: 8.468rem;
   }
 `
 

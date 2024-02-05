@@ -3,6 +3,7 @@ import { FormArea, InfoCard, MonthAndYear } from './styles'
 import { FormContent } from '../../components/FormContent/styles'
 import { useFormContext } from 'react-hook-form'
 import { Input } from '../../components/Input'
+import { useNavigate } from 'react-router-dom'
 
 interface ErrorsTypes {
   errors: {
@@ -15,9 +16,13 @@ interface ErrorsTypes {
 export function Form() {
   const { register, handleSubmit, formState } = useFormContext()
 
+  const navigate = useNavigate()
+
   const { errors } = formState as unknown as ErrorsTypes
 
-  function addCardDetails() {}
+  function addCardDetails() {
+    navigate('/completed')
+  }
 
   return (
     <FormContent onSubmit={handleSubmit(addCardDetails)}>
@@ -43,18 +48,23 @@ export function Form() {
             <MonthAndYear>
               <div>
                 <Input
-                  type="text"
+                  type="number"
                   placeholder="mm"
                   {...register('month')}
                   error={errors.month?.message}
+                  max={12}
+                  translate="no"
                 />
               </div>
               <div>
                 <Input
-                  type="text"
+                  type="number"
                   placeholder="yyyy"
                   {...register('year')}
                   error={errors.year?.message}
+                  min={2024}
+                  max={2030}
+                  translate="no"
                 />
               </div>
             </MonthAndYear>

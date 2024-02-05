@@ -19,6 +19,9 @@ export function AreaCard() {
 
   const name = watch('name')
   const number = watch('number')
+  const month = watch('month')
+  const year = watch('year')
+  const cvc = watch('cvc')
 
   return (
     <AreaCardContainer>
@@ -32,14 +35,16 @@ export function AreaCard() {
             <CardNumber>{number || '0000 0000 0000 0000'}</CardNumber>
             <CardData>
               <div>{name || 'Name User'}</div>
-              <div>00/00</div>
+              <div>
+                {month || '00'}/ {year || '0000'}
+              </div>
             </CardData>
           </NumberAndData>
         </FrontCard>
 
         <BackCard>
           <LineBlack />
-          <LineGray>000</LineGray>
+          <LineGray>{cvc || '000'}</LineGray>
         </BackCard>
       </Cards>
     </AreaCardContainer>

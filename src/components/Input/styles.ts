@@ -7,6 +7,7 @@ export const InputContainer = styled.div`
   p {
     color: red;
     margin-bottom: 0.5rem;
+    font-size: 0.875rem;
   }
 `
 
