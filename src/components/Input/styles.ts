@@ -20,8 +20,8 @@ export const InputStyles = styled.input<InputStylesProps>`
   margin: 0.75rem 0 0.8rem;
   padding: 0.75rem;
   border-radius: 10px;
-  border: 1px solid hsl(279, 6%, 55%);
-  font-size: 20px;
+  border: 0.0625rem solid hsl(279, 6%, 55%);
+  font-size: 1.25rem;
 
   ${({ hasError }) =>
     hasError &&

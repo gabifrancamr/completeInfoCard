@@ -2,12 +2,17 @@ import styled from 'styled-components'
 
 export const FormArea = styled.form`
   width: 70%;
-  font-size: 20px;
+  font-size: 1.25rem;
   height: auto;
-  margin-top: 25px;
+  margin-top: 1.5625rem;
+  margin-bottom: 4rem;
 
   label {
     text-transform: uppercase;
+  }
+
+  @media (min-width: 750px) {
+    margin-bottom: 0rem;
   }
 `
 

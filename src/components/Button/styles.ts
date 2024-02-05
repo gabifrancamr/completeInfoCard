@@ -11,5 +11,5 @@ export const ButtonContainer = styled.button`
   border-radius: 10px;
   background-color: hsl(278, 68%, 11%);
   color: #ffffff;
-  font-size: 22px;
+  font-size: 1.375rem;
 `

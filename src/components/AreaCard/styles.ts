@@ -17,7 +17,7 @@ export const AreaCardContainer = styled.div`
 
   @media (min-width: 750px) {
     position: relative;
-    width: 428px;
+    width: 26.75rem;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -27,13 +27,13 @@ export const AreaCardContainer = styled.div`
   }
 
   @media (min-width: 1030px) {
-    width: 800px;
+    width: 50rem;
   }
 `
 
 export const Cards = styled.div`
   position: relative;
-  margin-top: 3rem;
+  margin-top: 4rem;
 
   @media (min-width: 750px) {
     margin-top: 0;
@@ -42,8 +42,8 @@ export const Cards = styled.div`
 
 export const FrontCard = styled.div`
   position: absolute;
-  top: 15px;
-  left: -135px;
+  top: 0.9375rem;
+  left: -8.4375rem;
   z-index: 10;
   background: rgb(131, 58, 180);
   background: linear-gradient(
@@ -52,23 +52,23 @@ export const FrontCard = styled.div`
     rgba(253, 29, 29, 1) 56%,
     rgba(252, 176, 69, 1) 100%
   );
-  box-shadow: 10px 5px 24px #ffffff;
-  width: 201px;
-  height: 121px;
+  box-shadow: 0.625rem 0.313rem 1.5rem #ffffff;
+  width: 12.563rem;
+  height: 7.563rem;
   border-radius: 10px;
 
   @media (min-width: 750px) {
-    top: -167px;
-    left: -114px;
-    width: 277px;
-    height: 167px;
+    top: -10.4375rem;
+    left: -7.125rem;
+    width: 17.313rem;
+    height: 10.4375rem;
   }
 
   @media (min-width: 1030px) {
-    top: -245px;
-    left: -18px;
-    width: 351px;
-    height: 203px;
+    top: -15.3125rem;
+    left: -1.125rem;
+    width: 21.9375rem;
+    height: 12.6875rem;
   }
 `
 
@@ -78,80 +78,80 @@ export const Circles = styled.div`
 
 export const WhiteCircle = styled.div`
   position: absolute;
-  top: 12px;
-  left: 12px;
-  width: 25px;
-  height: 25px;
+  top: 0.75rem;
+  left: 0.75rem;
+  width: 1.5625rem;
+  height: 1.5625rem;
   background-color: white;
   border-radius: 50%;
 
   @media (min-width: 750px) {
-    width: 34px;
-    height: 34px;
+    width: 2.125rem;
+    height: 2.125rem;
   }
 `
 
 export const TransparentCircle = styled.div`
   position: absolute;
-  top: 18px;
-  left: 45px;
-  width: 13px;
-  height: 13px;
+  top: 1.125rem;
+  left: 2.8125rem;
+  width: 0.8125rem;
+  height: 0.8125rem;
   background-color: transparent;
-  border: 1px solid #ffffff;
+  border: 0.0625rem solid #ffffff;
   border-radius: 50%;
 
   @media (min-width: 750px) {
-    top: 20px;
-    left: 56px;
-    width: 20px;
-    height: 20px;
+    top: 1.25rem;
+    left: 3.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 `
 
 export const NumberAndData = styled.div`
   position: relative;
-  width: 201px;
-  height: 100px;
+  width: 12.5625rem;
+  height: 6.25rem;
   display: flex;
   justify-content: center;
 
   @media (min-width: 750px) {
-    width: 277px;
-    top: 44px;
+    width: 17.3125rem;
+    top: 2.75rem;
   }
 
   @media (min-width: 1030px) {
-    width: 351px;
-    top: 44px;
+    width: 21.9375rem;
+    top: 2.75rem;
   }
 `
 
 export const CardNumber = styled.div`
   position: absolute;
-  top: 60px;
-  font-size: 14px;
-  letter-spacing: 1px;
+  top: 3.75rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.0625rem;
   color: #ffffff;
   width: auto;
   text-decoration: none;
 
   @media (min-width: 750px) {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   @media (min-width: 1030px) {
-    font-size: 27px;
+    font-size: 1.6875rem;
   }
 `
 
 export const CardData = styled.div`
   position: absolute;
-  top: 80px;
-  width: 160px;
+  top: 5rem;
+  width: 10rem;
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #ffffff;
 
   div {
@@ -159,14 +159,14 @@ export const CardData = styled.div`
   }
 
   @media (min-width: 750px) {
-    top: 83px;
-    width: 228px;
+    top: 5.1875rem;
+    width: 14.25rem;
   }
 
   @media (min-width: 1030px) {
-    top: 94px;
-    width: 287px;
-    font-size: 20px;
+    top: 5.875rem;
+    width: 17.9375rem;
+    font-size: 1.25rem;
   }
 `
 
@@ -175,8 +175,8 @@ export const BackCard = styled.div`
   flex-direction: column;
   align-items: center;
   position: absolute;
-  bottom: -9px;
-  left: -77px;
+  bottom: -0.5625rem;
+  left: -4.8125rem;
   z-index: 9;
   background: rgb(214, 198, 226);
   background: linear-gradient(
@@ -185,62 +185,62 @@ export const BackCard = styled.div`
     rgba(223, 186, 199, 9.9164040616246498) 56%,
     rgba(157, 128, 126, 1) 100%
   );
-  box-shadow: 10px 5px 24px #ffffff;
-  width: 201px;
-  height: 121px;
+  box-shadow: 0.625rem 0.3125rem 1.5rem #ffffff;
+  width: 12.5625rem;
+  height: 7.5625rem;
   border-radius: 10px;
 
   @media (min-width: 750px) {
-    top: 21px;
-    left: -93px;
-    width: 277px;
-    height: 167px;
+    top: 1.3125rem;
+    left: -5.8125rem;
+    width: 17.3125rem;
+    height: 10.4375rem;
   }
 
   @media (min-width: 1030px) {
-    top: -17px;
-    left: 29px;
-    width: 351px;
-    height: 203px;
+    top: -1.0625rem;
+    left: 1.8125rem;
+    width: 21.9375rem;
+    height: 12.6875rem;
   }
 `
 export const LineBlack = styled.div`
-  width: 201px;
-  height: 22px;
+  width: 12.5625rem;
+  height: 1.375rem;
   background-color: #2f2d2d;
   position: absolute;
-  top: 20px;
+  top: 1.25rem;
 
   @media (min-width: 750px) {
-    width: 277px;
+    width: 17.3125rem;
   }
 
   @media (min-width: 1030px) {
-    width: 351px;
-    height: 39px;
+    width: 21.9375rem;
+    height: 2.4375rem;
   }
 `
 
 export const LineGray = styled.div`
   position: absolute;
-  top: 49px;
-  width: 132px;
-  height: 24px;
+  top: 3.0625rem;
+  width: 8.25rem;
+  height: 1.5rem;
   background-color: rgb(121, 121, 121);
   border-radius: 3px;
   text-align: end;
-  padding: 5px;
-  font-size: 12px;
+  padding: 0.3125rem;
+  font-size: 0.75rem;
   color: #d1c8c8;
 
   @media (min-width: 750px) {
-    width: 167px;
+    width: 10.4375rem;
   }
 
   @media (min-width: 1030px) {
-    width: 207px;
-    top: 71px;
-    font-size: 20px;
-    height: 32px;
+    width: 12.9375rem;
+    top: 4.4375rem;
+    font-size: 1.25rem;
+    height: 2rem;
   }
 `
