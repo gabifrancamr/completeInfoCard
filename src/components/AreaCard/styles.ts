@@ -92,6 +92,8 @@ export const CardData = styled.div`
 
   color: #ffffff;
 
+  gap: 1rem;
+
   div {
     text-transform: uppercase;
   }

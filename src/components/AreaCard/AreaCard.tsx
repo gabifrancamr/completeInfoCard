@@ -1,3 +1,4 @@
+import { useFormContext } from 'react-hook-form'
 import {
   AreaCardContainer,
   Cards,
@@ -14,6 +15,11 @@ import {
 } from './styles'
 
 export function AreaCard() {
+  const { watch } = useFormContext()
+
+  const name = watch('name')
+  const number = watch('number')
+
   return (
     <AreaCardContainer>
       <Cards>
@@ -23,9 +29,9 @@ export function AreaCard() {
             <TransparentCircle />
           </Circles>
           <NumberAndData>
-            <CardNumber>0000 0000 0000 0000</CardNumber>
+            <CardNumber>{number || '0000 0000 0000 0000'}</CardNumber>
             <CardData>
-              <div>name user</div>
+              <div>{name || 'Name User'}</div>
               <div>00/00</div>
             </CardData>
           </NumberAndData>
