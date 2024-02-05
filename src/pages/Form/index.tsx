@@ -36,10 +36,11 @@ export function Form() {
         />
         <label htmlFor="cardNumber">card number</label>
         <Input
-          type="number"
+          type="tel"
           placeholder="0000 0000 0000 0000"
           {...register('number')}
           error={errors.number?.message}
+          maxLength={19}
         />
 
         <InfoCard>
@@ -48,23 +49,25 @@ export function Form() {
             <MonthAndYear>
               <div>
                 <Input
-                  type="number"
+                  type="tel"
                   placeholder="mm"
                   {...register('month')}
                   error={errors.month?.message}
                   max={12}
                   translate="no"
+                  maxLength={2}
                 />
               </div>
               <div>
                 <Input
-                  type="number"
+                  type="tel"
                   placeholder="yyyy"
                   {...register('year')}
                   error={errors.year?.message}
                   min={2024}
                   max={2030}
                   translate="no"
+                  maxLength={4}
                 />
               </div>
             </MonthAndYear>
@@ -72,10 +75,11 @@ export function Form() {
           <div>
             <label htmlFor="">CVC</label>
             <Input
-              type="number"
+              type="tel"
               placeholder="123"
               {...register('cvc')}
               error={errors.cvc?.message}
+              maxLength={3}
             />
           </div>
         </InfoCard>
