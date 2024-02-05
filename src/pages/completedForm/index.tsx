@@ -7,7 +7,7 @@ export function CompletedOrder() {
   const navigate = useNavigate()
 
   function backToForm() {
-    navigate('/')
+    navigate('/completeInfoCard')
   }
 
   return (

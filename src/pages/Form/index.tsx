@@ -21,7 +21,7 @@ export function Form() {
   const { errors } = formState as unknown as ErrorsTypes
 
   function addCardDetails() {
-    navigate('/completed')
+    navigate('/completeInfoCard/completed')
   }
 
   return (

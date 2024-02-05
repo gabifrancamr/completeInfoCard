@@ -6,9 +6,12 @@ import { DefaultLayout } from './layout/DefaultLayout'
 export function Router() {
   return (
     <Routes>
-      <Route path="/" element={<DefaultLayout />}>
-        <Route path="/" element={<Form />} />
-        <Route path="/completed" element={<CompletedOrder />} />
+      <Route path="/completeInfoCard" element={<DefaultLayout />}>
+        <Route path="/completeInfoCard" element={<Form />} />
+        <Route
+          path="/completeInfoCard/completed"
+          element={<CompletedOrder />}
+        />
       </Route>
     </Routes>
   )
