@@ -13,6 +13,7 @@ export const FormArea = styled.form`
 
 export const InfoCard = styled.div`
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
   gap: 1rem;
@@ -20,6 +21,7 @@ export const InfoCard = styled.div`
 
 export const MonthAndYear = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 
   input {
