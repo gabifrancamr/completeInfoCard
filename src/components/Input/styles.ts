@@ -1,4 +1,8 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+interface InputStylesProps {
+  hasError: boolean
+}
 
 export const InputContainer = styled.div`
   display: flex;
@@ -11,11 +15,17 @@ export const InputContainer = styled.div`
   }
 `
 
-export const InputStyles = styled.input`
+export const InputStyles = styled.input<InputStylesProps>`
   width: 100%;
   margin: 0.75rem 0 0.8rem;
   padding: 0.75rem;
   border-radius: 10px;
   border: 1px solid hsl(279, 6%, 55%);
   font-size: 20px;
+
+  ${({ hasError }) =>
+    hasError &&
+    css`
+      border-color: red;
+    `}
 `
