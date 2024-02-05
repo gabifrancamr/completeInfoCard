@@ -8,4 +8,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Space Grotesk';
 }
 
+@media (max-width: 768px) {
+    html {
+        font-size: 87.5%;
+    }
+}
+
 `

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const FormArea = styled.form`
-  width: 50%;
+  width: 70%;
   font-size: 20px;
   height: auto;
   margin-top: 25px;
@@ -13,19 +13,31 @@ export const FormArea = styled.form`
 
 export const InfoCard = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
   gap: 1rem;
+
+  input {
+    max-width: 6rem;
+  }
+
+  @media (max-width: 750px) {
+    flex-wrap: wrap;
+  }
 `
 
 export const MonthAndYear = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
   gap: 0.5rem;
 
   input {
     text-transform: uppercase;
-    width: 8.468rem;
+    max-width: 6rem;
+  }
+
+  @media (max-width: 750px) {
+    flex-wrap: wrap;
   }
 `

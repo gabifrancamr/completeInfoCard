@@ -8,4 +8,8 @@ export const FormContent = styled.div`
   align-items: center;
   gap: 0.5rem;
   padding: 0 10rem;
+
+  @media (max-width: 1000px) {
+    padding: 0rem;
+  }
 `
