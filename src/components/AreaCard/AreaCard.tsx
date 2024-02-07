@@ -48,7 +48,7 @@ export function AreaCard() {
             <CardData>
               <div>{name || 'Name User'}</div>
               <div>
-                {month || '00'}/ {year || '0000'}
+                {month || '00'}/{year || '0000'}
               </div>
             </CardData>
           </NumberAndData>
