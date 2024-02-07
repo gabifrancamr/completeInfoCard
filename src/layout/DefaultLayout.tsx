@@ -19,20 +19,16 @@ const formCardValidationSchema = zod.object({
     .min(2, 'Informe 2 dígitos')
     .max(2, 'Informe 2 dígitos')
     .refine((value) => {
-      const monthNumber = parseInt(value, 10)
-      return !isNaN(monthNumber) && monthNumber >= 1 && monthNumber <= 12
+      const month = parseInt(value)
+      return month >= 1 && month <= 12
     }, 'Mês inválido'),
   year: zod
     .string()
     .min(4, 'Informe o ano de expiração')
     .max(4, 'Informe 4 dígitos')
     .refine((value) => {
-      const yearNumber = parseInt(value, 10)
-      return (
-        !isNaN(yearNumber) &&
-        yearNumber >= currentYear &&
-        yearNumber <= limitYear
-      )
+      const yearNumber = parseInt(value)
+      return yearNumber >= currentYear && yearNumber <= limitYear
     }, `Ano inválido. Deve estar entre ${currentYear} e ${limitYear}`),
   cvc: zod.string().min(3, 'Informe o cvc').max(3, 'Informe 3 dígitos'),
 })
