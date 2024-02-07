@@ -4,6 +4,7 @@ import { FormContent } from '../../components/FormContent/styles'
 import { useFormContext } from 'react-hook-form'
 import { Input } from '../../components/Input'
 import { useNavigate } from 'react-router-dom'
+import { ChangeEvent, useState } from 'react'
 
 interface ErrorsTypes {
   errors: {
@@ -13,7 +14,24 @@ interface ErrorsTypes {
   }
 }
 
+function formatCardNumber(value: string) {
+  // Remove qualquer caractere não numérico
+  const cleanedValue = value.replace(/\D/g, '')
+
+  // Adiciona espaços a cada 4 dígitos
+  const formattedValue = cleanedValue.replace(/(.{4})/g, '$1 ')
+
+  return formattedValue.trim() // Remove espaços extras no final
+}
+
 export function Form() {
+  const [cardNumber, setCardNumber] = useState('')
+
+  function handleCardNumberChange(e: ChangeEvent<HTMLInputElement>) {
+    const formattedValue = formatCardNumber(e.target.value)
+    setCardNumber(formattedValue)
+  }
+
   const { register, handleSubmit, formState, trigger, setValue } =
     useFormContext()
 
@@ -41,14 +59,16 @@ export function Form() {
         />
         <label htmlFor="cardNumber">card number</label>
         <Input
+          value={cardNumber}
           type="tel"
           placeholder="0000 0000 0000 0000"
           {...register('number')}
           error={errors.number?.message}
-          maxLength={16}
+          maxLength={19}
           onChange={(e) => {
             setValue('number', e.target.value)
             trigger('number')
+            handleCardNumberChange(e)
           }}
         />
 

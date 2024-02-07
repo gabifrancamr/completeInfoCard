@@ -12,8 +12,8 @@ const formCardValidationSchema = zod.object({
   name: zod.string().min(1, 'Informe o nome do usuário'),
   number: zod
     .string()
-    .min(16, 'O mínimo de digitos esperados é 16')
-    .max(16, 'O máximo de dígitos ultrapassados'),
+    .min(19, 'O mínimo de digitos esperados é 16')
+    .max(19, 'O máximo de dígitos ultrapassados'),
   month: zod
     .string()
     .min(2, 'Informe 2 dígitos')
