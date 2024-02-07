@@ -5,6 +5,9 @@ import { FormProvider, useForm } from 'react-hook-form'
 import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
+const currentYear = new Date().getFullYear()
+const limitYear = currentYear + 5
+
 const formCardValidationSchema = zod.object({
   name: zod.string().min(1, 'Informe o nome do usuário'),
   number: zod
@@ -13,12 +16,24 @@ const formCardValidationSchema = zod.object({
     .max(16, 'O máximo de dígitos ultrapassados'),
   month: zod
     .string()
-    .min(2, 'Informe o mês de expiração')
-    .max(2, 'Informe 2 dígitos'),
+    .min(2, 'Informe 2 dígitos')
+    .max(2, 'Informe 2 dígitos')
+    .refine((value) => {
+      const monthNumber = parseInt(value, 10)
+      return !isNaN(monthNumber) && monthNumber >= 1 && monthNumber <= 12
+    }, 'Mês inválido'),
   year: zod
     .string()
     .min(4, 'Informe o ano de expiração')
-    .max(4, 'Informe 4 dígitos'),
+    .max(4, 'Informe 4 dígitos')
+    .refine((value) => {
+      const yearNumber = parseInt(value, 10)
+      return (
+        !isNaN(yearNumber) &&
+        yearNumber >= currentYear &&
+        yearNumber <= limitYear
+      )
+    }, `Ano inválido. Deve estar entre ${currentYear} e ${limitYear}`),
   cvc: zod.string().min(3, 'Informe o cvc').max(3, 'Informe 3 dígitos'),
 })
 
