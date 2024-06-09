@@ -43,6 +43,9 @@ export function Form() {
     navigate('/completeInfoCard/completed')
   }
 
+  const currentYear = new Date().getFullYear()
+  const maxYear = Number(currentYear) + 5
+
   return (
     <FormContent onSubmit={handleSubmit(addCardDetails)}>
       <FormArea>
@@ -97,8 +100,8 @@ export function Form() {
                   placeholder="yyyy"
                   {...register('year')}
                   error={errors.year?.message}
-                  min={2024}
-                  max={2030}
+                  min={currentYear}
+                  max={maxYear}
                   translate="no"
                   maxLength={4}
                   onChange={(e) => {
