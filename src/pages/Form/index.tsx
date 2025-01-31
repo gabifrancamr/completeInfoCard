@@ -1,10 +1,10 @@
-import { Button } from '../../components/Button'
-import { FormArea, InfoCard, MonthAndYear } from './styles'
-import { FormContent } from '../../components/FormContent/styles'
-import { useFormContext } from 'react-hook-form'
-import { Input } from '../../components/Input'
-import { useNavigate } from 'react-router-dom'
 import { ChangeEvent, useState } from 'react'
+import { useFormContext } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import { Button } from '../../components/Button'
+import { FormContent } from '../../components/FormContent/styles'
+import { Input } from '../../components/Input'
+import { FormArea, InfoCard, MonthAndYear } from './styles'
 
 interface ErrorsTypes {
   errors: {
@@ -52,6 +52,7 @@ export function Form() {
         <label htmlFor="cardName">cardholder name</label>
         <Input
           type="text"
+          maxLength={30}
           placeholder="Name User"
           {...register('name')}
           error={errors.name?.message}
@@ -89,7 +90,7 @@ export function Form() {
                   translate="no"
                   maxLength={2}
                   onChange={(e) => {
-                    setValue('month', e.target.value)
+                    setValue('month', e.target.value.replace(/\D/g, ''))
                     trigger('month')
                   }}
                 />
@@ -105,7 +106,7 @@ export function Form() {
                   translate="no"
                   maxLength={4}
                   onChange={(e) => {
-                    setValue('year', e.target.value)
+                    setValue('year', e.target.value.replace(/\D/g, ''))
                     trigger('year')
                   }}
                 />
@@ -121,7 +122,7 @@ export function Form() {
               error={errors.cvc?.message}
               maxLength={3}
               onChange={(e) => {
-                setValue('cvc', e.target.value)
+                setValue('cvc', e.target.value.replace(/\D/g, ''))
                 trigger('cvc')
               }}
             />
